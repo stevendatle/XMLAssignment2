@@ -11,7 +11,6 @@
     <meta charset="utf-8">
 
     <title>XML Assignment 2</title>
-    <link rel="stylesheet" href="css/main.css">
 
 </head>
 
@@ -19,6 +18,11 @@
 
     <!-- LOGIN PAGE -->
     <?php require_once 'pages/login.php'?>
+
+    <style>
+    <?php include 'css/main.css';
+    ?>
+    </style>
 
 </body>
 

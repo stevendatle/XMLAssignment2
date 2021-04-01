@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
             <input type="text" name="username" required />
             <label for="password">Password</label>
             <input type="password" name="password" required />
-            <input type="submit" name="submit" value="Sign In" />
+            <input type="submit" name="submit" value="Sign In" id="submit" />
         </form>
 
     </div>

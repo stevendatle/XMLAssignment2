@@ -5,16 +5,18 @@
 .login-form {
     border: 1px solid black;
     width: 30%;
+    height: 10em;
     text-align: center;
     background-color: aliceblue;
 }
 
-.login-form input [type=submit] {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
+#submit {
+    position: relative;
+    top: 20px;
+    padding:5px 15px; 
+    background:rgb(195, 218, 224);
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
 }
