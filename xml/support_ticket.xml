@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- DATA STRUCTURE FOR SUPPORT TICKET -->
+<!-- Ticket identification, attaching client id, ticket id and admin id for organization -->
+<support_tickets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="support_tickets.xsd">
+  <support_ticket>
+    <identification>
+      <ticket_id>01</ticket_id>
+      <userid>0025</userid>
+    </identification>
+    <!-- Ticket content, meaning what the client is having a problem with -->
+    <ticket_content>
+      <subject>Accidentally deleted files on work computer.</subject>
+      <ticket_date>2021-02-15</ticket_date>
+      <message>I have accidentally deleted this year's financial reports, is it possible to get it back?</message>
+    </ticket_content>
+    <!-- Post ticket followup, asking if client's problem has been resolved / any feedback. Admin
+    gets a second look at the feedback provided and is able to deem the ticket still open or closed. -->
+    <ticket_followup>
+      <admin_response>Hi Dylan Marley, fortunately, deleted files get placed in a 10 day standby folder. I have went ahead and emailed you the recently deleted financial reports I managed to find. </admin_response>
+      <user_feedback>Thank you for the support!</user_feedback>
+      <ticket_status>Closed</ticket_status>
+    </ticket_followup>
+  </support_ticket>
+</support_tickets>

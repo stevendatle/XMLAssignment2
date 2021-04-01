@@ -1,0 +1,10 @@
+.login-form h1 {
+    text-align: center;
+}
+
+.login-form {
+    border: 1px solid black;
+    width: 30%;
+    text-align: center;
+    background-color: aliceblue;
+}

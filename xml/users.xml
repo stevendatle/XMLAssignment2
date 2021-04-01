@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- DATA STRUCTURE FOR USERS, CLIENT + ADMIN -->
+
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="users.xsd">
+  <user type="Client">
+    <userid>0025</userid>
+    <name>Dylan Marley</name>
+    <username>DaMarley23</username>
+    <password>grilledpineapples</password>
+  </user>
+  <user type="Admin">
+    <userid>0001</userid>
+    <name>Morgan Freeman</name>
+    <username>admin0001</username>
+    <password>lasthorocrux</password>
+  </user>
+</users>
