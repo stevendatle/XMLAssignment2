@@ -17,17 +17,8 @@
 
 <body>
 
-    <div class="login-form">
-
-        <h1> Login </h1>
-        <form>
-            <input type="text" placeholder="Enter Username" name="username" />
-            <input type="password" placeholder="Enter Password" name="password" />
-            <button type="submit">Login</button>
-        </form>
-
-    </div>
-
+    <!-- LOGIN PAGE -->
+    <?php require_once 'pages/login.php'?>
 
 </body>
 

@@ -13,7 +13,8 @@
 
 <body>
 
-    <h1>Your Tickets</h1>
+    <h1>Admin Tickets</h1>
+
 
 
 </body>
