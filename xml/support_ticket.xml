@@ -2,23 +2,37 @@
 <!-- DATA STRUCTURE FOR SUPPORT TICKET -->
 <!-- Ticket identification, attaching client id, ticket id and admin id for organization -->
 <support_tickets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="support_tickets.xsd">
-  <support_ticket>
-    <identification>
-      <ticket_id>01</ticket_id>
-      <userid>0025</userid>
-    </identification>
-    <!-- Ticket content, meaning what the client is having a problem with -->
-    <ticket_content>
-      <subject>Accidentally deleted files on work computer.</subject>
-      <ticket_date>2021-02-15</ticket_date>
-      <message>I have accidentally deleted this year's financial reports, is it possible to get it back?</message>
-    </ticket_content>
-    <!-- Post ticket followup, asking if client's problem has been resolved / any feedback. Admin
+    <support_ticket>
+        <identification>
+            <ticket_id>01</ticket_id>
+            <userid>0025</userid>
+        </identification>
+        <!-- Ticket content, meaning what the client is having a problem with -->
+        <ticket_content>
+            <subject> Deleted Files </subject>
+            <datetime>2021-02-15T09:20:31</datetime>
+            <message>I have accidentally deleted this year's financial reports, is it possible to get it back?</message>
+        </ticket_content>
+        <!-- Post ticket followup, asking if client's problem has been resolved / any feedback. Admin
     gets a second look at the feedback provided and is able to deem the ticket still open or closed. -->
-    <ticket_followup>
-      <admin_response>Hi Dylan Marley, fortunately, deleted files get placed in a 10 day standby folder. I have went ahead and emailed you the recently deleted financial reports I managed to find. </admin_response>
-      <user_feedback>Thank you for the support!</user_feedback>
-      <ticket_status>Closed</ticket_status>
-    </ticket_followup>
-  </support_ticket>
+        <ticket_followup>
+            <response>Hi Dylan Marley, fortunately, deleted files get placed in a 10 day standby folder. I have went ahead and emailed you the recently deleted financial reports I managed to find. </response>
+            <ticket_status>Closed</ticket_status>
+        </ticket_followup>
+    </support_ticket>
+    <support_ticket>
+        <identification>
+            <ticket_id>02</ticket_id>
+            <userid>0025</userid>
+        </identification>
+        <ticket_content>
+            <subject> Website Problem </subject>
+            <datetime>2021-03-15T06:30:11</datetime>
+            <message> I can't load my website.</message>
+        </ticket_content>
+        <ticket_followup>
+            <response>Hi Dylan Marley, it looks like you have not registered your SSL yet. Please register your SSL. </response>
+            <ticket_status>Open</ticket_status>
+        </ticket_followup>
+    </support_ticket>
 </support_tickets>

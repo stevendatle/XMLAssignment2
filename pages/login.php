@@ -1,41 +1,24 @@
 <?php
+session_start();
+$xml = simplexml_load_file("./xml/users.xml");
 
-//hardcoded admin login
-$admin_user = "admin";
-$admin_pass = "pass";
-
-//hardcoded client login
-$client_user = "client";
-$client_pass = "pass";
-
-//checking if user has submitted form
 if (isset($_POST['submit'])) {
-
-    $user_input = $_POST['username']; //getting user input
-    $pass_input = $_POST['password']; //getting password input
-
-    //checking user inputs against ADMIN login
-    if ($admin_user == $user_input) {
-        if ($admin_pass == $pass_input) {
-            //if both fields are correct - send user here
-            header("Location: pages/admin-tickets.php");
+    $username = preg_replace('/[^A-Za-z]/', '', $_POST['username']);
+    $password = $_POST['password'];
+    foreach ($xml->user as $user) {
+        if ($username == $user->username && $password == $user->password) {
+            if ($user->usertype == "Client") {
+                $_SESSION['username'] = $username;
+                header('location: pages/user-tickets.php');
+                die;
+            } else if ($user->usertype == "Admin") {
+                echo "test";
+                $_SESSION['username'] = $username;
+                header('location: pages/admin-tickets.php');
+                die;
+            }
         }
-        echo "Login is not correct"; //username correct, password incorrect
-        die();
     }
-    //checking user inputs against CLIENT login
-    else if ($client_user == $user_input) {
-        if ($client_pass == $pass_input) {
-            //if both fields are correct - send user here
-            header("Location: pages/user-tickets.php");
-        }
-        echo "Login is not correct"; //username correct, password incorrect
-        die();
-    } else {
-        echo "Login is not correct";
-        die();
-    }
-
 }
 
 ?>
@@ -49,7 +32,7 @@ if (isset($_POST['submit'])) {
     <meta charset="utf-8">
 
     <title>Login</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
 
 </head>
 
@@ -58,12 +41,12 @@ if (isset($_POST['submit'])) {
     <div class="login-form">
 
         <h1> Login </h1>
-        <form action="" method="post">
+        <form method="post" action="">
             <label for="user">User</label>
             <input type="text" name="username" required />
             <label for="password">Password</label>
             <input type="password" name="password" required />
-            <input type="submit" name="submit" value="Sign In" id="submit" />
+            <input type="submit" name="submit" value="Sign In" id="submitBtn" />
         </form>
 
     </div>

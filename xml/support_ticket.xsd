@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="support_tickets">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="support_ticket" minOccurs="0" maxOccurs="unbounded">
-          <xs:complexType>
+    <xs:element name="support_tickets">
+        <xs:complexType>
             <xs:sequence>
-              <xs:element name="identification" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="ticket_id" type="xs:positiveInteger" />
-                    <xs:element name="userid" type="xs:positiveInteger" />
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="ticket_content" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="subject" type="xs:string" />
-                    <xs:element name="ticket_date" type="xs:date"/>
-                    <xs:element name="message" type="xs:string"/>
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="ticket_followup" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="admin_response" type="xs:string"/>
-                    <xs:element name="user_feedback" type="xs:string"/>
-                    <xs:element name="ticket_status" type="xs:string"/>
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
+                <xs:element name="support_ticket" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="identification" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ticket_id" type="xs:positiveInteger" />
+                                        <xs:element name="userid" type="xs:positiveInteger" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ticket_content" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="subject" type="xs:string"/>
+                                        <xs:element name="datetime" type="xs:dateTime"/>
+                                        <xs:element name="message" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ticket_followup" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="response" type="xs:string" maxOccurs="unbounded"/>
+                                        <xs:element name="ticket_status" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>

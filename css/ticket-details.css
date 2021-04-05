@@ -1,4 +1,4 @@
-table.userTickets {
+table.ticketDetails {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     border: 2px solid #FFFFFF;
     background-color: #EEEEEE;
@@ -7,31 +7,31 @@ table.userTickets {
     text-align: center;
     border-collapse: collapse;
   }
-  table.userTickets td, table.userTickets th {
+  table.ticketDetails td, table.ticketDetails th {
     border: 1px solid #FFFFFF;
     padding: 3px 5px;
   }
-  table.userTickets tbody td {
+  table.ticketDetails tbody td {
     font-size: 14px;
   }
-  table.userTickets td:nth-child(even) {
+  table.ticketDetails td:nth-child(even) {
     background: #EBEBEB;
   }
-  table.userTickets thead {
+  table.ticketDetails thead {
     background: #FFFFFF;
     border-bottom: 4px solid #333333;
   }
-  table.userTickets thead th {
+  table.ticketDetails thead th {
     font-size: 15px;
     font-weight: bold;
     color: #333333;
     text-align: center;
     border-left: 2px solid #333333;
   }
-  table.userTickets thead th:first-child {
+  table.ticketDetails thead th:first-child {
     border-left: none;
   }
   
-  table.userTickets tfoot td {
+  table.ticketDetails tfoot td {
     font-size: 14px;
   }

@@ -2,16 +2,18 @@
 <!-- DATA STRUCTURE FOR USERS, CLIENT + ADMIN -->
 
 <users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="users.xsd">
-  <user type="Client">
+  <user>
     <userid>0025</userid>
+    <usertype>Client</usertype>
     <name>Dylan Marley</name>
-    <username>DaMarley23</username>
-    <password>grilledpineapples</password>
+    <username>client</username>
+    <password>123</password>
   </user>
-  <user type="Admin">
+  <user>
     <userid>0001</userid>
+    <usertype>Admin</usertype>
     <name>Morgan Freeman</name>
-    <username>admin0001</username>
-    <password>lasthorocrux</password>
+    <username>admin</username>
+    <password>pass</password>
   </user>
 </users>
