@@ -60,7 +60,7 @@ foreach ($xml->children() as $p) {
         </tbody>
     </table>
 
-    <form action="user-tickets.php" method="post">
+    <form action="admin-tickets.php" method="post">
         <input type="submit" value="Back to Tickets" />
     </form>
 

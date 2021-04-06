@@ -22,6 +22,14 @@ foreach ($xml->children() as $p) {
     }
 } //end of for each loop
 
+//attemping to get message system working
+if (isset($_POST['sendMsg'])) {
+    $message = $_POST['message'];
+
+    echo $message;
+
+}
+
 ?>
 
 
@@ -52,8 +60,10 @@ foreach ($xml->children() as $p) {
             <tr>
                 <td></td>
                 <td>
-                    <textarea rows="3" cols="20" name="message" form="msgForm"></textarea>
-                    <input type="submit" name="sendMsg" value="Send Message" />
+                    <form method="POST" action="">
+                        <textarea rows="3" cols="20" name="message" form="msgForm"></textarea>
+                        <input type="submit" name="sendMsg" value="Send Message" />
+                    </form>
                 </td>
             </tr>
         </tbody>

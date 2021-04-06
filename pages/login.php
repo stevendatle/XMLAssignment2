@@ -1,11 +1,17 @@
 <?php
 session_start();
+//loading xml file with logins
 $xml = simplexml_load_file("./xml/users.xml");
 
+//if loop when user submits, validating usernames against xml file
 if (isset($_POST['submit'])) {
+    //preventing malicious logins
     $username = preg_replace('/[^A-Za-z]/', '', $_POST['username']);
+    //need to put password through hash
     $password = $_POST['password'];
 
+    //if the user provides correct client credentials, send them to user page.
+    //if user provides correct admin credentials, send them to admin page
     foreach ($xml->user as $user) {
         if ($username == $user->username && $password == $user->password) {
             if ($user->usertype == "Client") {

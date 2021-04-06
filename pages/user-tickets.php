@@ -1,19 +1,19 @@
 <?php
 session_start();
 
-//loading xml file
-$xmlusers = simplexml_load_file("../xml/users.xml") or die("Error: cannot create object");
-
 $rows = '';
+//session variables
 $userid = $_SESSION['userid'];
 $username = $_SESSION['username'];
 
+//loading xml users file
 if (file_exists("../xml/support_ticket.xml")) {
     $xml = simplexml_load_file("../xml/support_ticket.xml") or die("Error: cannot create object");
     //foreach loop for display ticket information
     foreach ($xml->children() as $p) {
         if ($p->identification->userid == $userid) {
             $rows .= '<tr>';
+            //redirecting user to correct ticket ID
             $rows .= '<td><a href="ticket-details.php?ticketid=' . $p->identification->ticket_id . '">' . $p->identification->ticket_id . '</a></td>';
             $rows .= '<td>' . $p->ticket_content->datetime . '</td>';
             $rows .= '<td>' . $p->ticket_content->subject . '</td>';
@@ -53,6 +53,8 @@ if (file_exists("../xml/support_ticket.xml")) {
             <?php echo $rows ?>
         </tbody>
     </table>
+    <!-- LOGOUT -->
+    <a href='logout.php'>Click here to log out</a>
 </body>
 
 

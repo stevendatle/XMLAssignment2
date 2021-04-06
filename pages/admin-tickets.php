@@ -5,6 +5,7 @@ session_start();
 //loading xml file
 $xml = simplexml_load_file("../xml/support_ticket.xml") or die("Error: cannot create object");
 
+//session variables
 $userid = $_SESSION['userid'];
 $username = $_SESSION['username'];
 
@@ -13,6 +14,7 @@ $rows = '';
 //foreach loop for display ticket information
 foreach ($xml->children() as $p) {
     $rows .= '<tr>';
+    //redirecting to correct ticket ID
     $rows .= '<td><a href="admin-response.php?ticketid=' . $p->identification->ticket_id . '">' . $p->identification->ticket_id . '</a></td>';
     $rows .= '<td>' . $p->ticket_content->datetime . '</td>';
     $rows .= '<td>' . $p->ticket_content->subject . '</td>';
@@ -49,6 +51,7 @@ foreach ($xml->children() as $p) {
             <?php echo $rows ?>
         </tbody>
     </table>
+    <a href='logout.php'>Click here to log out</a>
 
 
 
