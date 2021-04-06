@@ -51,6 +51,7 @@ foreach ($xml->children() as $p) {
             <!-- Messaging Details -->
             <tr>
                 <td></td>
+                <td></td>
                 <td>
                     <textarea rows="3" cols="20" name="message" form="msgForm"></textarea>
                     <input type="submit" name="sendMsg" value="Send Message" />

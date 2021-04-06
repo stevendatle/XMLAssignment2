@@ -14,7 +14,7 @@ if (file_exists("../xml/support_ticket.xml")) {
     foreach ($xml->children() as $p) {
         if ($p->identification->userid == $userid) {
             $rows .= '<tr>';
-            $rows .= '<td><a href="ticket-details.php?test=' . $p->identification->ticket_id . '">' . $p->identification->ticket_id . '</a></td>';
+            $rows .= '<td><a href="ticket-details.php?ticketid=' . $p->identification->ticket_id . '">' . $p->identification->ticket_id . '</a></td>';
             $rows .= '<td>' . $p->ticket_content->datetime . '</td>';
             $rows .= '<td>' . $p->ticket_content->subject . '</td>';
             $rows .= '<td>' . $p->ticket_content->message . '</td>';
