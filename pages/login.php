@@ -5,15 +5,17 @@ $xml = simplexml_load_file("./xml/users.xml");
 if (isset($_POST['submit'])) {
     $username = preg_replace('/[^A-Za-z]/', '', $_POST['username']);
     $password = $_POST['password'];
+
     foreach ($xml->user as $user) {
         if ($username == $user->username && $password == $user->password) {
             if ($user->usertype == "Client") {
                 $_SESSION['username'] = $username;
+                $_SESSION['userid'] = $user->userid->__toString();
                 header('location: pages/user-tickets.php');
                 die;
             } else if ($user->usertype == "Admin") {
-                echo "test";
                 $_SESSION['username'] = $username;
+                $_SESSION['userid'] = $user->userid->__toString();
                 header('location: pages/admin-tickets.php');
                 die;
             }
@@ -32,7 +34,7 @@ if (isset($_POST['submit'])) {
     <meta charset="utf-8">
 
     <title>Login</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 

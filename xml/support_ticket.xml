@@ -5,7 +5,7 @@
     <support_ticket>
         <identification>
             <ticket_id>01</ticket_id>
-            <userid>0025</userid>
+            <userid>0020</userid>
         </identification>
         <!-- Ticket content, meaning what the client is having a problem with -->
         <ticket_content>
@@ -23,7 +23,7 @@
     <support_ticket>
         <identification>
             <ticket_id>02</ticket_id>
-            <userid>0025</userid>
+            <userid>0020</userid>
         </identification>
         <ticket_content>
             <subject> Website Problem </subject>
@@ -33,6 +33,21 @@
         <ticket_followup>
             <response>Hi Dylan Marley, it looks like you have not registered your SSL yet. Please register your SSL. </response>
             <ticket_status>Open</ticket_status>
+        </ticket_followup>
+    </support_ticket>
+    <support_ticket>
+        <identification>
+            <ticket_id>03</ticket_id>
+            <userid>0021</userid>
+        </identification>
+        <ticket_content>
+            <subject> Lost Item </subject>
+            <datetime>2021-03-15T06:30:11</datetime>
+            <message> I can't find my toe clippers!</message>
+        </ticket_content>
+        <ticket_followup>
+            <response>Hello Tony, your toe clippers are probably somewhere around your house! </response>
+            <ticket_status>Closed</ticket_status>
         </ticket_followup>
     </support_ticket>
 </support_tickets>

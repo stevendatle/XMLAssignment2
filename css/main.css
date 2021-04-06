@@ -8,6 +8,8 @@
     height: 10em;
     text-align: center;
     background-color: aliceblue;
+    display: grid;
+    place-content: center;
 }
 
 #submitBtn {

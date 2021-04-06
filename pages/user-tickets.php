@@ -1,7 +1,30 @@
 <?php
+session_start();
 
 //loading xml file
-$xml = simplexml_load_file("../xml/support_ticket.xml") or die("Error: cannot create object");
+$xmlusers = simplexml_load_file("../xml/users.xml") or die("Error: cannot create object");
+
+$rows = '';
+$userid = $_SESSION['userid'];
+$username = $_SESSION['username'];
+
+if (file_exists("../xml/support_ticket.xml")) {
+    $xml = simplexml_load_file("../xml/support_ticket.xml") or die("Error: cannot create object");
+    //foreach loop for display ticket information
+    foreach ($xml->children() as $p) {
+        if ($p->identification->userid == $userid) {
+            $rows .= '<tr>';
+            $rows .= '<td><a href="ticket-details.php?test=' . $p->identification->ticket_id . '">' . $p->identification->ticket_id . '</a></td>';
+            $rows .= '<td>' . $p->ticket_content->datetime . '</td>';
+            $rows .= '<td>' . $p->ticket_content->subject . '</td>';
+            $rows .= '<td>' . $p->ticket_content->message . '</td>';
+            $rows .= '<td>' . $p->ticket_followup->ticket_status . '</td>';
+            $rows .= '</tr>';
+        }
+    }
+
+}
+
 ?>
 
 
@@ -26,22 +49,8 @@ $xml = simplexml_load_file("../xml/support_ticket.xml") or die("Error: cannot cr
             <th>STATUS</th>
         </thead>
         <tbody>
-            <?php foreach ($xml->support_ticket as $support_ticket): ?>
             <!-- Printing XML Data into table -->
-            <tr>
-                <td><?php echo $support_ticket->identification->ticket_id ?></td>
-                <td><?php echo $support_ticket->ticket_content->datetime ?></td>
-                <td><?php echo $support_ticket->ticket_content->subject ?></td>
-                <td>
-                    <form action="ticket-details.php" method="post">
-                        <input type="hidden" name="ticketDetails"
-                            value="<?=$support_ticket->identification->ticket_id;?>" />
-                        <input type="submit" class="button" name="ticketDetails" value="View Ticket" />
-                    </form>
-                </td>
-                <td><?php echo $support_ticket->ticket_followup->ticket_status ?></td>
-            </tr>
-            <?php endforeach;?>
+            <?php echo $rows ?>
         </tbody>
     </table>
 </body>

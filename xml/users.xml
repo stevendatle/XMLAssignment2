@@ -3,11 +3,18 @@
 
 <users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="users.xsd">
   <user>
-    <userid>0025</userid>
+    <userid>0020</userid>
     <usertype>Client</usertype>
     <name>Dylan Marley</name>
     <username>client</username>
     <password>123</password>
+  </user>
+  <user>
+    <userid>0021</userid>
+    <usertype>Client</usertype>
+    <name>Tony Allen</name>
+    <username>tony</username>
+    <password>apple</password>
   </user>
   <user>
     <userid>0001</userid>

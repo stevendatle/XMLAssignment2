@@ -1,12 +1,25 @@
 <?php
 
-if (isset($_POST['submit'])) {
-    $selectedTicket = $_POST["ticketDetails"];
-
-}
+session_start();
 
 //loading xml file
 $xml = simplexml_load_file("../xml/support_ticket.xml") or die("Error: cannot create object");
+
+$rows = '';
+
+$link = $_GET['test'];
+
+foreach ($xml->children() as $p) {
+
+    if ($p->identification->ticket_id == $link) {
+        $rows .= '<tr>';
+        $rows .= '<td>' . $p->identification->ticket_id . '</td>';
+        $rows .= '<td>' . $p->ticket_content->message . '</td>';
+        $rows .= '<td>' . $p->ticket_followup->response . '</td>';
+        $rows .= '</tr>';
+    }
+}
+
 ?>
 
 
@@ -29,19 +42,14 @@ $xml = simplexml_load_file("../xml/support_ticket.xml") or die("Error: cannot cr
             <th>Admin Response</th>
         </thead>
         <tbody>
-            <?php foreach ($xml->support_ticket as $support_ticket): ?>
             <!-- Printing XML Data into table -->
             <tr>
-                <td><?php echo $support_ticket->identification->ticket_id ?></td>
-                <td><?php echo $support_ticket->ticket_content->message ?></td>
-                <td><?php echo $support_ticket->ticket_followup->response ?></td>
-                </td>
+                <td><?php print $rows;?> </td>
             </tr>
-            <?php endforeach;?>
         </tbody>
     </table>
 
-    <form action="pages/user-tickets.php" method="post">
+    <form action="user-tickets.php" method="post">
         <input type="submit" value="Back to Tickets" />
     </form>
 
